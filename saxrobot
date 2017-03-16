@@ -90,11 +90,13 @@ sub irc_public {
 	}
 
 	my $idx = 0;
+	my $reply = "( ͡° ͜ʖ ͡°)";
 	foreach my $re ($config{re}) {
+		$re = qr/$re/i;
+		$reply = q($config{rep}[$idx]);
 		my $repcount = () = $what =~ $re;
-
 		if ($repcount > 0) {
-			$irc->yield(privmsg => $channel => $config{rep}[$idx] x $repcount);
+			$irc->yield(privmsg => $channel => $reply x $repcount);
 		}
 		$idx++;
 	}
