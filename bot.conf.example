@@ -7,3 +7,5 @@ ignore   = trumpetbot,abusiveuser
 password = pleffquiffle
 admins   = snargle!~kleg@glarg.example.com
 must_id  = 1
+re	 = /tr+u+m+p/i, /tr+u/i
+rep	 = 🎺, 🎺
